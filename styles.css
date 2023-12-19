@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* ?? to make sure that our elements don't appear bigger than they are, and that padding and border are part of the element */
+    box-sizing: border-box;
+}
+
+/* * css variables */
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --white-50-opc: hsl(0, 0%, 100%);
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+/* *the body is a grid so that the items can be centered in the page */
+body {
+    display: grid;
+    place-items: center;
+    background-color: var(--light-grayish-blue);
+    height: 100vh;
+}
+
+/* *container containing all main components */
+main {
+    /* todo: come back to tis */
+    margin: 3rem 0 3rem;
+    width: 90%;
+    /* border: 0.125rem solid; */
+}
+
+/* *targets all cards */
+article.colored-card,
+article.white-card {
+    font-size: 0.8125rem;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    position: relative;
+    /* *todo: tweak */
+    padding: 1.5rem 3.25rem 2rem 1.95rem;
+    border-radius: 0.5rem;
+    line-height: 1.35;
+    margin-bottom: 1.25rem;
+}
+
+/* *targets the first card (Daniel) */
+article.card-1 {
+    background-color: var(--moderate-violet);
+}
+
+/* *targets the second card (jonathan) */
+article.card-2 {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+/* *targets the white cards (Jeanette and Kira) */
+article.white-card {
+    background-color: var(--white);
+}
+
+/* * targets the fourth card (patrick)  */
+article.card-4 {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+/* *targets the name and "verified graduate" container */
+section.initials {
+    display: flex;
+}
+
+/* *targets the quotes */
+svg#quotes-img {
+    position: absolute;
+    top: 0;
+    right: 1.6rem;
+}
+
+/* * selecting the heading that is a child of the first card and applying a z index to it */
+article.card-1 h2.white-heading {
+    position: relative;
+    z-index: 0;
+}
+
+/* *selects all headings */
+h2.heading {
+    margin-top: 1rem;
+    font-size: 1.23rem;
+    font-weight: 500;
+}
+
+/* * targets all the white headings and names on colored cards */
+h3.white-name,
+h4.white-title,
+h2.white-heading,
+p.white-paragraph {
+    color: var(--white);
+}
+
+/* * targets all the blue headings and names on white cards */
+
+h3.blue-name,
+h4.blue-title,
+h2.blue-heading,
+p.blue-paragraph {
+    color: var(--very-dark-grayish-blue);
+}
+
+/* * targets the user's images */
+
+img {
+    width: 1.9rem;
+    height: 1.9rem;
+    margin-right: 0.2rem;
+    border-radius: 100%;
+}
+
+/* * targets the name and title container */
+div.name-and-title-cont {
+    margin-top: 0.09rem;
+    margin-left: 0.75rem;
+}
+
+/* * targets the all the names */
+h3.name {
+    font-weight: 400;
+    font-size: 0.7rem;
+    /* margin-bottom: 0.06rem; */
+}
+
+/* * targets the "Verified graduate" titles  */
+h4.vg-title {
+    font-weight: 400;
+    font-size: 0.6rem;
+    opacity: 50%;
+}
+
+/* * targets the paragraphs  */
+
+p.paragraph {
+    opacity: 70%;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    line-height: 1.43;
+}
