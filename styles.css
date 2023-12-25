@@ -8,6 +8,7 @@
 /* * css variables */
 :root {
     --moderate-violet: hsl(263, 55%, 52%);
+    --image-border: hsl(263, 27%, 34%);
     --very-dark-grayish-blue: hsl(217, 19%, 35%);
     --very-dark-blackish-blue: hsl(219, 29%, 14%);
     --white: hsl(0, 0%, 100%);
@@ -24,22 +25,22 @@ body {
     height: 100vh;
 }
 
+/* ! MOBILE */
+
 /* *container containing all main components */
-main {
+main#container {
     /* todo: come back to tis */
     margin: 3rem 0 3rem;
     width: 90%;
-    /* border: 0.125rem solid; */
 }
 
 /* *targets all cards */
-article.colored-card,
-article.white-card {
+article.card {
     font-size: 0.8125rem;
     font-family: "Barlow Semi Condensed", sans-serif;
     position: relative; /*? positioning the card so that we can precisely position the quotes with "position: absolute" */
     /* *todo: tweak */
-    padding: 1.5rem 3.25rem 2rem 1.95rem;
+    padding: 1.5rem 2.25rem 2.2rem 1.95rem;
     border-radius: 0.5rem;
     line-height: 1.35;
     margin-bottom: 1.25rem;
@@ -75,6 +76,25 @@ svg#quotes-img {
     position: absolute; /*? positioning the quotes precisely on the page with position absolute*/
     top: 0;
     right: 1.6rem;
+}
+
+/* * targets the name and title container */
+div.name-and-title-cont {
+    margin-top: 0.09rem;
+    margin-left: 0.75rem;
+}
+
+/* * targets the all the names */
+h3.name {
+    font-weight: 400;
+    font-size: 0.7rem;
+}
+
+/* * targets the "Verified graduate" titles  */
+h4.vg-title {
+    font-weight: 400;
+    font-size: 0.6rem;
+    opacity: 50%;
 }
 
 /* *? positioning establishes a new stacking-context for the 2 elements below, so that they can be moved to the front of the page */
@@ -116,24 +136,8 @@ img {
     border-radius: 100%;
 }
 
-/* * targets the name and title container */
-div.name-and-title-cont {
-    margin-top: 0.09rem;
-    margin-left: 0.75rem;
-}
-
-/* * targets the all the names */
-h3.name {
-    font-weight: 400;
-    font-size: 0.7rem;
-    /* margin-bottom: 0.06rem; */
-}
-
-/* * targets the "Verified graduate" titles  */
-h4.vg-title {
-    font-weight: 400;
-    font-size: 0.6rem;
-    opacity: 50%;
+article.coloured-card img {
+    border: 0.1rem solid var(--image-border);
 }
 
 /* * targets the paragraphs  */
@@ -144,4 +148,52 @@ p.paragraph {
     font-weight: 300;
     margin-top: 1rem;
     line-height: 1.43;
+}
+
+/* !DESKTOP */
+
+@media only screen and (min-width: 81.25rem) {
+    /* *turning the container into a grid, and setting the templates */
+    main#container {
+        display: grid;
+        width: 80%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 18.75rem);
+        grid-template-areas:
+            "card1 card1 card2 card5"
+            "card3 card4 card4 card5";
+        gap: 1rem;
+    }
+
+    /* *removing the margin bottom from all cards */
+    article.coloured-card,
+    article.white-card {
+        margin-bottom: 0;
+    }
+
+    /* *matching each element to the grid area name */
+    article.card-1 {
+        grid-area: card1;
+    }
+    article.card-2 {
+        grid-area: card2;
+    }
+    article.card-3 {
+        grid-area: card3;
+    }
+    article.card-4 {
+        grid-area: card4;
+    }
+    article.card-5 {
+        grid-area: card5;
+    }
+
+    /* *making the heading and paragraph bigger */
+    h2.heading {
+        font-size: 1.36rem;
+    }
+
+    p.paragraph {
+        font-size: 0.85rem;
+    }
 }
