@@ -26,18 +26,15 @@ Users should be able to:
 ### Screenshots
 
 Mobile Screenshot
-![](./solution-screenshots/mobile%20screenshot.png)
-
-Tablet Screenshot
-![](./solution-screenshots/tablet-screenshot.png)
+![](./solution-screenshots/mobile.png)
 
 Desktop Screenshot
-![](./solution-screenshots/laptop-desktop-screenshot.png)
+![](./solution-screenshots/desktop.png)
 
 ### Links
 
--   [Solution URL](https://github.com/EtFX1/Frontend-Mentor-Testimonials-grid-section)
--   [Live Site URL](https://etfx1.github.io/Frontend-Mentor-Testimonials-grid-section/)
+-   [Solution URL](https://www.frontendmentor.io/solutions/mobile-first-responsive-css-grid-vlV8qaMjaD)
+-   [Live Site URL](https://etfx1.github.io/Frontend-mentor-Testimonials-grid-section/)
 
 ## My process
 
@@ -45,22 +42,18 @@ Desktop Screenshot
 
 -   Semantic HTML5 markup
 -   CSS custom properties
--   CSS Flexbox
--   CSS Grid
 
 ### What I learned
 
-I learned how to use CSS Grid, and how to implement flexbox in it.
-
-To see how you can add code snippets, see below:
+I learned the fundamentals of css grid and the power of grid template areas.
 
 ### Continued development
 
-I want to gradually master building CSS Grid layouts, and making them responsive.
+I want to learn how to use container queries.
 
 ### Useful resources
 
--   [Kevin Powell: Learn CSS Grid the easy way!](https://www.youtube.com/watch?v=rg7Fvvl3taU) - This was a very well broken down video which explained only the main concepts that you need to get started with CSS Grid. Just like the title says it teaches you the easiest way to get started with grid and teaches you all the main values and properties you need to know. It's an excellent resource.
+-   [Slaying the dragon: Learn CSS Grid - A 13 Minute Deep Dive](https://www.youtube.com/watch?v=EiNiSFIPIQE) - Very concise and straight to the point video explaining the main properties needed for css grid
 
 ## Author
 
