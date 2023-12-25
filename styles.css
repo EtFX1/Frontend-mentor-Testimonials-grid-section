@@ -37,7 +37,7 @@ article.colored-card,
 article.white-card {
     font-size: 0.8125rem;
     font-family: "Barlow Semi Condensed", sans-serif;
-    position: relative;
+    position: relative; /*? positioning the card so that we can precisely position the quotes with "position: absolute" */
     /* *todo: tweak */
     padding: 1.5rem 3.25rem 2rem 1.95rem;
     border-radius: 0.5rem;
@@ -72,15 +72,15 @@ section.initials {
 
 /* *targets the quotes */
 svg#quotes-img {
-    position: absolute;
+    position: absolute; /*? positioning the quotes precisely on the page with position absolute*/
     top: 0;
     right: 1.6rem;
 }
 
-/* * selecting the heading that is a child of the first card and applying a z index to it */
-article.card-1 h2.white-heading {
+/* *? positioning establishes a new stacking-context for the 2 elements below, so that they can be moved to the front of the page */
+section.initials,
+h2.white-heading:first-of-type {
     position: relative;
-    z-index: 0;
 }
 
 /* *selects all headings */
@@ -90,7 +90,7 @@ h2.heading {
     font-weight: 500;
 }
 
-/* * targets all the white headings and names on colored cards */
+/* * targets all the white headings and names on coloured cards */
 h3.white-name,
 h4.white-title,
 h2.white-heading,
