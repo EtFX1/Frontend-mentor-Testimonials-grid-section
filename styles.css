@@ -1,148 +1,155 @@
 * {
     padding: 0;
     margin: 0;
-    /* ?? to make sure that our elements don't appear bigger than they are, and that padding and border are part of the element */
-    box-sizing: border-box;
+    box-sizing: border-box; /* ? to make sure that our elements don't appear bigger than they are, and that padding and border are part of the element's default sizing */
 }
 
 /* * css variables */
 :root {
     --moderate-violet: hsl(263, 55%, 52%);
     --image-border: hsl(263, 27%, 34%);
-    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-greyish-blue: hsl(217, 19%, 35%);
     --very-dark-blackish-blue: hsl(219, 29%, 14%);
     --white: hsl(0, 0%, 100%);
     --white-50-opc: hsl(0, 0%, 100%);
     --light-gray: hsl(0, 0%, 81%);
-    --light-grayish-blue: hsl(210, 46%, 95%);
+    --light-greyish-blue: hsl(210, 46%, 95%);
+    --box-shadow-color: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
 }
 
-/* *the body is a grid so that the items can be centered in the page */
+/* *the body is a grid so that the items can be centred in the page */
+
 body {
     display: grid;
     place-items: center;
-    background-color: var(--light-grayish-blue);
-    height: 100vh;
+    background-color: var(--light-greyish-blue);
+    /* height: 100vh; */ /*todo: might uncomment*/
+    line-height: 1.35;
+    font-size: 0.8125rem; /* 13px */
+    /* border: 2px solid; */
 }
 
 /* ! MOBILE */
 
-/* *container containing all main components */
-main#container {
-    /* todo: come back to tis */
+/* * targets container containing all cards */
+.container {
     margin: 3rem 0 3rem;
     width: 90%;
+    max-width: 90rem; /* 1440px*/
 }
 
 /* *targets all cards */
-article.card {
-    font-size: 0.8125rem;
+.card {
     font-family: "Barlow Semi Condensed", sans-serif;
-    position: relative; /*? positioning the card so that we can precisely position the quotes with "position: absolute" */
-    /* *todo: tweak */
+
+    /*? giving each a default position of "relative" so that we can precisely position the quotes with "position: absolute" */
+    position: relative;
+
     padding: 1.5rem 2.25rem 2.2rem 1.95rem;
     border-radius: 0.5rem;
-    line-height: 1.35;
     margin-bottom: 1.25rem;
+    box-shadow: var(--box-shadow-color);
 }
 
+/* *!adding background colors for all cards */
+
 /* *targets the first card (Daniel) */
-article.card-1 {
+.card-1 {
     background-color: var(--moderate-violet);
 }
 
 /* *targets the second card (jonathan) */
-article.card-2 {
-    background-color: var(--very-dark-grayish-blue);
+.card-2 {
+    background-color: var(--very-dark-greyish-blue);
 }
 
-/* *targets the white cards (Jeanette and Kira) */
-article.white-card {
+/* *targets the third and fifth cards (Jeanette and Kira) */
+.white-card {
     background-color: var(--white);
 }
 
 /* * targets the fourth card (patrick)  */
-article.card-4 {
+.card-4 {
     background-color: var(--very-dark-blackish-blue);
 }
 
 /* *targets the name and "verified graduate" container */
-section.initials {
+.initials {
     display: flex;
 }
 
 /* *targets the quotes */
-svg#quotes-img {
+.quotes-img {
     position: absolute; /*? positioning the quotes precisely on the page with position absolute*/
     top: 0;
     right: 1.6rem;
 }
 
 /* * targets the name and title container */
-div.name-and-title-cont {
+.name-and-title-cont {
     margin-top: 0.09rem;
     margin-left: 0.75rem;
 }
 
 /* * targets the all the names */
-h3.name {
+.name {
     font-weight: 400;
     font-size: 0.7rem;
 }
 
 /* * targets the "Verified graduate" titles  */
-h4.vg-title {
+.vg-title {
     font-weight: 400;
     font-size: 0.6rem;
     opacity: 50%;
 }
 
 /* *? positioning establishes a new stacking-context for the 2 elements below, so that they can be moved to the front of the page */
-section.initials,
-h2.white-heading:first-of-type {
+.initials,
+.white-heading:first-of-type {
     position: relative;
 }
 
 /* *selects all headings */
-h2.heading {
+.heading {
     margin-top: 1rem;
     font-size: 1.23rem;
     font-weight: 500;
 }
 
 /* * targets all the white headings and names on coloured cards */
-h3.white-name,
-h4.white-title,
-h2.white-heading,
-p.white-paragraph {
+.white-name,
+.white-title,
+.white-heading,
+.white-paragraph {
     color: var(--white);
 }
 
 /* * targets all the blue headings and names on white cards */
 
-h3.blue-name,
-h4.blue-title,
-h2.blue-heading,
-p.blue-paragraph {
-    color: var(--very-dark-grayish-blue);
+.blue-name,
+.blue-title,
+.blue-heading,
+.blue-paragraph {
+    color: var(--very-dark-greyish-blue);
 }
 
 /* * targets the user's images */
 
-img {
+.user-image {
     width: 1.9rem;
     height: 1.9rem;
     margin-right: 0.2rem;
     border-radius: 100%;
 }
 
-article.coloured-card img {
+.coloured-card .user-image {
     border: 0.1rem solid var(--image-border);
 }
 
 /* * targets the paragraphs  */
 
-p.paragraph {
+.paragraph {
     opacity: 70%;
     font-size: 0.8rem;
     font-weight: 300;
@@ -150,50 +157,8 @@ p.paragraph {
     line-height: 1.43;
 }
 
-/* !DESKTOP */
-
-@media only screen and (min-width: 81.25rem) {
-    /* *turning the container into a grid, and setting the templates */
-    main#container {
-        display: grid;
-        width: 80%;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 18.75rem);
-        grid-template-areas:
-            "card1 card1 card2 card5"
-            "card3 card4 card4 card5";
-        gap: 1rem;
-    }
-
-    /* *removing the margin bottom from all cards */
-    article.coloured-card,
-    article.white-card {
-        margin-bottom: 0;
-    }
-
-    /* *matching each element to the grid area name */
-    article.card-1 {
-        grid-area: card1;
-    }
-    article.card-2 {
-        grid-area: card2;
-    }
-    article.card-3 {
-        grid-area: card3;
-    }
-    article.card-4 {
-        grid-area: card4;
-    }
-    article.card-5 {
-        grid-area: card5;
-    }
-
-    /* *making the heading and paragraph bigger */
-    h2.heading {
-        font-size: 1.36rem;
-    }
-
-    p.paragraph {
-        font-size: 0.85rem;
-    }
+.card-5 {
+    margin-bottom: 0;
 }
+
+/* !DESKTOP */
