@@ -22,11 +22,11 @@
 body {
     display: grid;
     place-items: center;
+    min-height: 100vh;
+
     background-color: var(--light-greyish-blue);
-    /* height: 100vh; */ /*todo: might uncomment*/
     line-height: 1.35;
     font-size: 0.8125rem; /* 13px */
-    /* border: 2px solid; */
 }
 
 /* ! MOBILE */
@@ -71,6 +71,10 @@ body {
 /* * targets the fourth card (patrick)  */
 .card-4 {
     background-color: var(--very-dark-blackish-blue);
+}
+
+.card-5 {
+    margin-bottom: 0;
 }
 
 /* *targets the name and "verified graduate" container */
@@ -157,8 +161,54 @@ body {
     line-height: 1.43;
 }
 
-.card-5 {
-    margin-bottom: 0;
-}
-
 /* !DESKTOP */
+
+/*1000px */
+@media only screen and (min-width: 62.5rem) {
+    /* *turns the container into a grid, and setting the templates */
+    .container {
+        display: grid;
+        width: 80%;
+        max-width: 1440px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 15rem);
+        grid-template-areas:
+            "card1 card1 card2 card5"
+            "card3 card4 card4 card5";
+        gap: 1rem;
+        margin: 0;
+    }
+
+    /* *targets all cards */
+    .card {
+        margin-bottom: 0;
+        overflow: hidden;
+        padding: 1.25rem;
+    }
+
+    .heading {
+        font-size: 1rem;
+        margin-top: 0.7rem;
+    }
+
+    .paragraph {
+        font-size: 0.65rem;
+    }
+
+    /* *matching each element to the grid area name */
+    .card-1 {
+        grid-area: card1;
+    }
+    .card-2 {
+        grid-area: card2;
+    }
+    .card-3 {
+        grid-area: card3;
+    }
+    .card-4 {
+        grid-area: card4;
+    }
+    .card-5 {
+        grid-area: card5;
+    }
+}
